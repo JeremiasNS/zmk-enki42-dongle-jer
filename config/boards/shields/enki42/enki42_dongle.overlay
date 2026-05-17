@@ -3,12 +3,12 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#include "enki42.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix_transform = &default_transform;
+		zmk,physical-layout = &physical_layout0;
         zephyr,display = &oled;
     };
 
@@ -21,9 +21,15 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <0>;
-        rows = <0>;
+		columns = <10>;
+		rows = <4>;
         map = <>;
+    };
+
+	physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
     };
 };
 
