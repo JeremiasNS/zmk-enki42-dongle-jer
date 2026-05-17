@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#include "scylla.dtsi"
+#include "enki42.dtsi"
 
 / {
     chosen {
