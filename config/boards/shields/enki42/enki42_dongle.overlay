@@ -3,4 +3,22 @@
  *
  * SPDX-License-Identifier: MIT
  */
-/* enki42_dongle.overlay vazio — usa definições do dtsi original */
+#include "enki42.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,matrix_transform = &default_transform;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&kscan0 {
+    status = "disabled";
+};
